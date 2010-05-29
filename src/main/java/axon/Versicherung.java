@@ -8,6 +8,11 @@ public class Versicherung {
   private Person versicherter;
   private Set<Person> beguenstigte = new HashSet<Person>(2);
 
+  public Versicherung(Person versicherter) {
+    this.versicherter = versicherter;
+    addBeguenstigten(versicherter);
+  }
+
   public Person getVersicherter() {
     return versicherter;
   }
@@ -20,7 +25,16 @@ public class Versicherung {
     return beguenstigte;
   }
 
-  public void setBeguenstigte(Set<Person> beguenstigte) {
-    this.beguenstigte = beguenstigte;
+  public void addBeguenstigten(Person beguenstigter) {
+    if (beguenstigte.size() < 2) {
+      beguenstigte.add(beguenstigter);
+    }
+    else {
+      throw new IllegalStateException("Es sind bereits zwei Beguenstigte angegeben");
+    }
+  }
+
+  public void removeBeguenstigten(Person beguenstigter) {
+    beguenstigte.remove(beguenstigter);
   }
 }
