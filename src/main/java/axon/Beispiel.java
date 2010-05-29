@@ -1,8 +1,8 @@
 package axon;
 
-public class Sample {
+public class Beispiel {
 
   public String printIt() {
-    return "my text";
+    return "mein text";
   }
 }
