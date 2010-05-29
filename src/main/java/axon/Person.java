@@ -1,8 +1,16 @@
 package axon;
 
-public class Person {
+import axon.event.PersonAngelegtEvent;
+import org.axonframework.eventsourcing.annotation.AbstractAnnotatedAggregateRoot;
+
+public class Person extends AbstractAnnotatedAggregateRoot {
 
   private String name;
+
+  public Person(String name) {
+    this.name = name;
+    this.registerEvent(new PersonAngelegtEvent(this));
+  }
 
   public String getName() {
     return name;

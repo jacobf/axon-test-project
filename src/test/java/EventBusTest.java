@@ -27,7 +27,7 @@ public class EventBusTest {
 
   @Test
   public void testEventIsDispatchedToSubscribedListeners() {
-    Person person = new Person();
+    Person person = new Person("name");
     eventBus.publish(new PersonAngelegtEvent(person));
     eventBus.subscribe(listener1);
     // subscribing twice should not make a difference
