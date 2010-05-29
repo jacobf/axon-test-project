@@ -6,7 +6,7 @@ import java.util.Set;
 public class Versicherung {
 
   private Person versicherter;
-  private Set<Person> begünstigte = new HashSet<Person>(2);
+  private Set<Person> beguenstigte = new HashSet<Person>(2);
 
   public Person getVersicherter() {
     return versicherter;
@@ -16,11 +16,11 @@ public class Versicherung {
     this.versicherter = versicherter;
   }
 
-  public Set<Person> getBegünstigte() {
-    return begünstigte;
+  public Set<Person> getBeguenstigte() {
+    return beguenstigte;
   }
 
-  public void setBegünstigte(Set<Person> begünstigte) {
-    this.begünstigte = begünstigte;
+  public void setBeguenstigte(Set<Person> beguenstigte) {
+    this.beguenstigte = beguenstigte;
   }
 }
